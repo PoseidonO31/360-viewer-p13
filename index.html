@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>360 View</title>
+    <!-- 1. Link the Pannellum CSS (required for styling) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <style>
+        /* 2. Set the size of the viewer container */
+        #panorama {
+            width: 100%;
+            /* Adjust height as needed, 600px is a good starting point */
+            height: 600px; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 3. This is the container where the 360 view will appear -->
+    <div id="panorama"></div>
+
+    <!-- 4. Link the Pannellum JavaScript (must be placed near the end of the body) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <script>
+        // 5. Initialize the 360 viewer with your settings
+        pannellum.viewer('panorama', {
+            "room": {
+                "panorama": "YOUR_PUBLIC_IMAGE_URL_HERE" // <-- 🛑 REPLACE THIS LINE 🛑
+            },
+            "autoLoad": true, // Automatically starts the viewer
+            "showMsg": true,  // Shows instructions like "Look around"
+            "hfov": 110,      // Horizontal Field of View (how wide the view is)
+            "pitch": 0,       // Starting vertical angle
+            "yaw": 0          // Starting horizontal angle
+        });
+    </script>
+
+</body>
+</html>
